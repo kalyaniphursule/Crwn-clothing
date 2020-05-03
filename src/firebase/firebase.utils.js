@@ -45,6 +45,5 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     }
   }
   return userRef;
-  console.log(firestore.doc(snapShot));
 };
 export default firebase;
