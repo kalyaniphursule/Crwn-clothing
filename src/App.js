@@ -1,6 +1,6 @@
 import React from "react";
-import "./App.css";
-import HomePage from "./pages/homepage.component";
+
+import HomePage from "./pages/homepage/homepage.component";
 
 import { Route, Switch, Redirect } from "react-router";
 import ShopPage from "./components/shop/shop.component";
@@ -10,6 +10,8 @@ import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
 import CheckOut from "./pages/checkout/checkout.component";
+
+import { GlobalStyle } from "./global.styles";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -41,6 +43,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <GlobalStyle />
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
